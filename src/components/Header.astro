@@ -1,29 +1,31 @@
 ---
+const base = import.meta.env.BASE_URL;
+
 const navItems = [
     {
         title: "Proyectos",
         label: "proyectos",
-        url: "/#projects",
+        url: `${base}#projects`,
     },
     {
         title: "Experiencia",
         label: "experiencia",
-        url: "/#experience",
+        url: `${base}#experience`,
     },
     {
         title: "Formación",
         label: "formacion",
-        url: "/#education",
+        url: `${base}#education`,
     },
     {
         title: "Sobre mí",
         label: "sobre-mi",
-        url: "/#about-me",
+        url: `${base}#about-me`,
     },
     {
         title: "Contacto",
         label: "contacto",
-        url: "mailto:rolingson.john@gmail.com",
+        url: "mailto:rolingson.john@gmail.com", // mailto no necesita base
     },
 ];
 ---
