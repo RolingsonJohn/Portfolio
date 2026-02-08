@@ -1,0 +1,23 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCES = [
+    {
+        date: "Septiembre 2024 - Marzo 2025",
+        title: "Ingeniero en prácticas - Natureh",
+        image: "/institutions/natureh-logo.webp",
+        description:
+            "Soporte y resolución de incidencias en entornos productivos, desarrollo y mantenimiento de soluciones ERP personalizadas (Visual Basic y SQL), automatización de procesos mediante EDIFACT e integración de servicios web SOAP con operadores logísticos (GLS).",
+    },
+];
+---
+
+<ol class="relative border-s border-default mb-10">
+    {
+        EXPERIENCES.map((experience) => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>

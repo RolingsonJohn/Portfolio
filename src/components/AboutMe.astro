@@ -1,0 +1,47 @@
+---
+const currentDate = new Date();
+const birthDate = new Date(2002, 9, 24);
+
+let age = currentDate.getFullYear() - birthDate.getFullYear();
+const monthDiff = currentDate.getMonth() - birthDate.getMonth();
+const dayDiff = currentDate.getDate() - birthDate.getDate();
+
+if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+    age--; // Aún no cumple años en 2026
+}
+---
+
+<article
+    class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
+>
+    <div
+        class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+    >
+        <p>
+            Me llamo John Rolingson, tengo {age}, nací en Caracas 🇻🇪 y desde
+            pequeño he vivido en distintos lugares de España, lo que me obligó a
+            la constante <strong>adaptación a nuevos entornos</strong>.
+        </p>
+
+        <p>
+            Elegí estudiar Ingeniería Informática porque siempre he tenido
+            curiosidad por entender cómo funcionan las cosas, desde los sistemas
+            más cotidianos hasta la infraestructura que hay detrás del software
+            moderno. Al principio me interesaban las ciencias puras, pero la
+            informática me ofrecía algo que encajaba mejor conmigo: la capacidad
+            de crear sistemas complejos desde cero y optimizarlos para que
+            funcionen de la mejor manera posible.
+        </p>
+
+        <p>
+            Durante el grado en la Universidad Autónoma de Madrid consolidé una
+            <strong
+                >base sólida en algoritmos, estructuras de datos, sistemas y
+                backend</strong
+            >, y descubrí un interés especial por la <strong
+                >ciberseguridad y la arquitectura de sistemas</strong
+            >. Me atrae comprender cómo se comunican los sistemas, cómo se
+            protegen y cómo se puede mejorar su rendimiento.
+        </p>
+    </div>
+</article>

@@ -1,0 +1,132 @@
+---
+import Docker from "../icons/Docker.astro";
+import Python from "../icons/Python.astro";
+import C from "../icons/c.astro";
+import CSharp from "../icons/csharp.astro";
+import Django from "../icons/Django.astro";
+import Azure from "../icons/Azure.astro";
+import GoogleCloud from "../icons/GoogleCloud.astro";
+import Redis from "../icons/Redis.astro";
+import Vue from "../icons/Vue.astro";
+import Unity from "../icons/Unity.astro";
+import ProjectItem from "./ProjectItem.astro";
+
+const TECH = {
+    C: {
+        name: "C",
+        class: "bg-[#00599C] text-white",
+        icon: C,
+    },
+    CSHARP: {
+        name: "C#",
+        class: "bg-[#239120] text-white",
+        icon: CSharp,
+    },
+    PYTHON: {
+        name: "Python",
+        class: "bg-[#3776AB] text-white",
+        icon: Python,
+    },
+    DJANGO: {
+        name: "Django",
+        class: "bg-black text-white",
+        icon: Django,
+    },
+    DOCKER: {
+        name: "Docker",
+        class: "bg-[#003159] text-white",
+        icon: Docker,
+    },
+    AZURE: {
+        name: "Azure",
+        class: "bg-[#0089D6] text-white",
+        icon: Azure,
+    },
+    REDIS: {
+        name: "Redis",
+        class: "bg-[#DC382D] text-white",
+        icon: Redis,
+    },
+    GOOGLECLOUD: {
+        name: "Google Cloud",
+        class: "bg-[#DC382D] text-white",
+        icon: GoogleCloud,
+    },
+    UNITY: {
+        name: "Unity",
+        class: "bg-black text-white",
+        icon: Unity,
+    },
+    VUE: {
+        name: "Vue.js",
+        class: "bg-[#42b883] text-white",
+        icon: Vue,
+    },
+    SQL: {
+        name: "SQL",
+        class: "bg-[#003B57] text-white",
+        icon: C,
+    },
+};
+
+const PROJECTS = [
+    {
+        id: 0,
+        title: "Servidor HTTP en C",
+        description:
+            "Implementación de un servidor HTTP básico en C desde cero, manejando apertura de sockets, gestión de conexiones y respuestas HTTP.",
+        github: "https://github.com/RolingsonJohn/HttpServerC#",
+        image: "",
+        progress: 100,
+        techs: [TECH.C],
+    },
+    {
+        id: 1,
+        title: "MonkeeChess - Juego multijugador de ajedrez",
+        description:
+            "Desarrollo de un juego de ajedrez multijugador en línea utilizando Django y canales WebSocket para comunicación en tiempo real.",
+        link: "https://p4-monkee-chess.onrender.com/",
+        github: "https://github.com/RolingsonJohn/",
+        image: "",
+        progress: 100,
+        techs: [TECH.PYTHON, TECH.DJANGO, TECH.DOCKER, TECH.VUE],
+    },
+    {
+        id: 2,
+        title: "SecureBox - Aplicación gestión segura de contraseñas",
+        description:
+            "Aplicación de escritorio desarrollada en python con Tkinter que permite a los usuarios almacenar y gestionar sus contraseñas de forma segura mediante cifrado AES-256 en modo GCM.",
+        github: "https://github.com/RolingsonJohn/SecureBox",
+        image: "",
+        progress: 100,
+        techs: [TECH.PYTHON, TECH.GOOGLECLOUD],
+    },
+    {
+        id: 3,
+        title: "AutoGrader (LLMs)",
+        description:
+            "Trabajo de final de grado para Ingeniería Informática. Plataforma que permite a los profesores crear ejercicios de programación y evaluar automáticamente las soluciones de los estudiantes utilizando modelos de lenguaje grande (LLMs).",
+        github: "https://github.com/RolingsonJohn/AutoGrader",
+        image: "",
+        progress: 100,
+        techs: [TECH.PYTHON, TECH.DJANGO, TECH.DOCKER, TECH.REDIS, TECH.AZURE],
+    },
+    {
+        id: 4,
+        title: "RtsWeb - Juego de estrategia en web",
+        description:
+            "Desarrollo de un juego de estrategia en tiempo real (RTS) basado en navegador utilizando el motor Unity y C#.",
+        image: "",
+        progress: 30,
+        techs: [TECH.CSHARP, TECH.UNITY],
+    },
+];
+---
+
+<div class="flex flex-col gap-y-16 mb-16">
+    {
+        PROJECTS.sort((a, b) => b.id - a.id).map((project) => (
+            <ProjectItem {...project} />
+        ))
+    }
+</div>

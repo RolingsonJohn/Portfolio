@@ -1,0 +1,49 @@
+---
+import Badge from "./Badge.astro";
+import Social from "./SocialNetworks.astro";
+import GithubIcon from "../icons/Github.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import profile from "../assets/profile_picture.png";
+---
+
+<div class="flex flex-col md:flex-row gap-8">
+    <div class="flex flex-col">
+        <h1 class="text-white text-5xl font-bold md:text-left">
+            John Rolingson
+        </h1>
+        <a
+            href="https://www.linkedin.com/in/john-ander-rolingson-avellanal-79b2271ba/"
+            target="_blank"
+            rel="noopener"
+            class="items-center mt-4"
+        >
+            <Badge>Disponible para trabajar</Badge>
+        </a>
+    </div>
+
+    <img class="rounded-full size-20" src={profile.src} alt="profile-photo" />
+</div>
+
+<h2
+    id="profile-description"
+    class="text-2xl opacity-80 [&>strong]:text-yellow-500 dark:[&>strong]:text-yellow-100 [&>strong]:font-normal [&>strong]:font-mono text-pretty"
+>
+    <strong>Ingeniero Informático</strong> con especial interés en el desarrollo
+    <strong>Backend, la optimización/automatización y la ciberseguridad</strong
+    >, siempre desde una base sólida de conocimiento.
+</h2>
+
+<nav class="flex flex-wrap gap-4 mt-8">
+    <Social
+        title="LinkeIn"
+        href="https://www.linkedin.com/in/john-ander-rolingson-avellanal-79b2271ba/"
+    >
+        <LinkedInIcon class="w-6 h-6">LinkedIn</LinkedInIcon>
+    </Social>
+    <Social
+        title="Github"
+        href="https://github.com/RolingsonJohn?tab=repositories"
+    >
+        <GithubIcon class="w-6 h-6">GitHub</GithubIcon>
+    </Social>
+</nav>
