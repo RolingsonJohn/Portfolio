@@ -1,3 +1,12 @@
+---
+import footerEs from "../i18n/es/footer.json";
+import footerEn from "../i18n/en/footer.json";
+
+type Lang = "es" | "en";
+const { lang = "es" } = Astro.props as { lang?: Lang };
+const t = lang === "en" ? footerEn : footerEs;
+const base = import.meta.env.BASE_URL;
+---
 <footer
     class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
 >
@@ -6,7 +15,7 @@
     >
         <span
             class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
-            >Portfolio creado siguiendo el tutorial de <a
+            >{t.credit} <a
                 href="https://github.com/midudev/porfolio.dev">midudev.</a
             >
         </span>
@@ -14,15 +23,15 @@
             class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
         >
             <li>
-                <a href="/#sobre-mi" class="hover:underline me-4 md:me-6"
-                    >Sobre mí</a
-                >
+                <a href={`${base}#about-me`} class="hover:underline me-4 md:me-6">
+                    {t.links.aboutMe}
+                </a>
             </li>
             <li>
                 <a
                     id="contacto"
                     href="mailto:rolingson.john@gmail.com"
-                    class="hover:underline">Contacto</a
+                    class="hover:underline">{t.links.contact}</a
                 >
             </li>
         </ul>

@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "title": "John Rolingson",
+    "description": "Portfolio de John Rolingson"
+  },
+  "sections": {
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "education": "Formación",
+    "aboutMe": "Sobre mí"
+  }
+}

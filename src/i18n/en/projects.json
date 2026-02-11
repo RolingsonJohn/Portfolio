@@ -1,0 +1,39 @@
+{
+  "buttons": {
+    "code": "Code",
+    "preview": "Preview"
+  },
+  "items": [
+    {
+      "id": 0,
+      "title": "HTTP Server in C",
+      "description": "Implementation of a basic HTTP server in C from scratch, handling socket opening, connection management and HTTP responses.",
+      "github": "https://github.com/RolingsonJohn/HttpServerC#"
+    },
+    {
+      "id": 1,
+      "title": "MonkeeChess - Online multiplayer chess game",
+      "description": "Development of an online multiplayer chess game using Django and WebSocket channels for real-time communication.",
+      "link": "https://p4-monkee-chess.onrender.com/",
+      "github": "https://github.com/RolingsonJohn/"
+    },
+    {
+      "id": 2,
+      "title": "SecureBox - Secure password management application",
+      "description": "Desktop application developed in Python with Tkinter that allows users to securely store and manage their passwords using AES-256 encryption in GCM mode.",
+      "github": "https://github.com/RolingsonJohn/SecureBox"
+    },
+    {
+      "id": 3,
+      "title": "AutoGrader (LLMs)",
+      "description": "Final degree project for Computer Engineering. Platform that allows lecturers to create programming exercises and automatically evaluate students' solutions using large language models (LLMs).",
+      "github": "https://github.com/RolingsonJohn/AutoGrader"
+    },
+    {
+      "id": 4,
+      "title": "RtsWeb - Web-based strategy game",
+      "description": "Development of a real-time strategy (RTS) browser-based game using the Unity engine and C#.",
+      "progress": 30
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "John Rolingson",
+  "badge": "Available for work",
+  "description": {
+    "role": "Computer Engineer",
+    "intro": "with a special interest in",
+    "focus": "Backend, optimization/automation and cybersecurity",
+    "suffix": ", always built on a solid foundation of knowledge."
+  },
+  "aria": {
+    "profilePhoto": "Profile photo"
+  },
+  "social": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  }
+}

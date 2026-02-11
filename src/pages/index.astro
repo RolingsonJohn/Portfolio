@@ -6,33 +6,36 @@ import Projects from "../components/Projects.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Formation from "../components/Formation.astro";
+import indexEs from "../i18n/es/index.json";
+
+const lang: "es" | "en" = "es";
 ---
 
-<Layout title="John Rolingson" description="Portfolio de John Rolingson">
+<Layout lang={lang} title={indexEs.meta.title} description={indexEs.meta.description}>
 	<main>
 		<SectionContainer id="#" class="py-44 pb-20">
-			<Profile />
+			<Profile lang={lang} />
 		</SectionContainer>
 		<SectionContainer id="projects">
 			<h2
 				class="w-full mx-auto lg:w-[740px] flex flex-col gap-8 text-3xl font-bold mb-8"
 			>
-				Proyectos
+				{indexEs.sections.projects}
 			</h2>
-			<Projects />
+			<Projects lang={lang} />
 		</SectionContainer>
 		<SectionContainer id="experience">
-			<h2 class="text-3xl font-bold mb-8">Experiencia</h2>
-			<ExperinceList />
+			<h2 class="text-3xl font-bold mb-8">{indexEs.sections.experience}</h2>
+			<ExperinceList lang={lang} />
 		</SectionContainer>
 		<SectionContainer id="education">
-			<h2 class="text-3xl font-bold mb-8">Formación</h2>
-			<Formation />
+			<h2 class="text-3xl font-bold mb-8">{indexEs.sections.education}</h2>
+			<Formation lang={lang} />
 		</SectionContainer>
 
 		<SectionContainer id="about-me">
-			<h2 class="text-3xl font-bold mb-8">Sobre mí</h2>
-			<AboutMe />
+			<h2 class="text-3xl font-bold mb-8">{indexEs.sections.aboutMe}</h2>
+			<AboutMe lang={lang} />
 		</SectionContainer>
 	</main>
 </Layout>

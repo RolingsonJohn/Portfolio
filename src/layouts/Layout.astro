@@ -4,20 +4,31 @@ import "@fontsource-variable/onest";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
+import indexEs from "../i18n/es/index.json";
+import indexEn from "../i18n/en/index.json";
 
-const { title, description } = Astro.props;
+type Lang = "es" | "en";
+
+const { title, description, lang = "es" } = Astro.props as {
+	title?: string;
+	description?: string;
+	lang?: Lang;
+};
 const base = import.meta.env.BASE_URL;
+const dict = lang === "en" ? indexEn : indexEs;
+const metaTitle = title ?? dict.meta.title;
+const metaDescription = description ?? dict.meta.description;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
+		<meta name="description" content={metaDescription} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href=`${base}/logo.ico` />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{metaTitle}</title>
 		<ClientRouter />
 	</head>
 	<body>
@@ -25,9 +36,9 @@ const base = import.meta.env.BASE_URL;
 			class="fixed top-0 left-0 z-[-2] h-full w-full min-h-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"
 		>
 		</div>
-		<Header />
+		<Header lang={lang} />
 		<slot />
-		<Footer />
+		<Footer lang={lang} />
 		<style is:global>
 			:root {
 				color-scheme: light dark;

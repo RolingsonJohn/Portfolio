@@ -1,0 +1,39 @@
+{
+  "buttons": {
+    "code": "Code",
+    "preview": "Preview"
+  },
+  "items": [
+    {
+      "id": 0,
+      "title": "Servidor HTTP en C",
+      "description": "Implementación de un servidor HTTP básico en C desde cero, manejando apertura de sockets, gestión de conexiones y respuestas HTTP.",
+      "github": "https://github.com/RolingsonJohn/HttpServerC#"
+    },
+    {
+      "id": 1,
+      "title": "MonkeeChess - Juego multijugador de ajedrez",
+      "description": "Desarrollo de un juego de ajedrez multijugador en línea utilizando Django y canales WebSocket para comunicación en tiempo real.",
+      "link": "https://p4-monkee-chess.onrender.com/",
+      "github": "https://github.com/RolingsonJohn/"
+    },
+    {
+      "id": 2,
+      "title": "SecureBox - Aplicación gestión segura de contraseñas",
+      "description": "Aplicación de escritorio desarrollada en python con Tkinter que permite a los usuarios almacenar y gestionar sus contraseñas de forma segura mediante cifrado AES-256 en modo GCM.",
+      "github": "https://github.com/RolingsonJohn/SecureBox"
+    },
+    {
+      "id": 3,
+      "title": "AutoGrader (LLMs)",
+      "description": "Trabajo de final de grado para Ingeniería Informática. Plataforma que permite a los profesores crear ejercicios de programación y evaluar automáticamente las soluciones de los estudiantes utilizando modelos de lenguaje grande (LLMs).",
+      "github": "https://github.com/RolingsonJohn/AutoGrader"
+    },
+    {
+      "id": 4,
+      "title": "RtsWeb - Juego de estrategia en web",
+      "description": "Desarrollo de un juego de estrategia en tiempo real (RTS) basado en navegador utilizando el motor Unity y C#.",
+      "progress": 30
+    }
+  ]
+}

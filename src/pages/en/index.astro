@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Profile from "../../components/Profile.astro";
+import ExperinceList from "../../components/ExperinceList.astro";
+import Projects from "../../components/Projects.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import AboutMe from "../../components/AboutMe.astro";
+import Formation from "../../components/Formation.astro";
+import indexEn from "../../i18n/en/index.json";
+
+const lang: "es" | "en" = "en";
+---
+
+<Layout lang={lang} title={indexEn.meta.title} description={indexEn.meta.description}>
+	<main>
+		<SectionContainer id="#" class="py-44 pb-20">
+			<Profile lang={lang} />
+		</SectionContainer>
+		<SectionContainer id="projects">
+			<h2
+				class="w-full mx-auto lg:w-[740px] flex flex-col gap-8 text-3xl font-bold mb-8"
+			>
+				{indexEn.sections.projects}
+			</h2>
+			<Projects lang={lang} />
+		</SectionContainer>
+		<SectionContainer id="experience">
+			<h2 class="text-3xl font-bold mb-8">{indexEn.sections.experience}</h2>
+			<ExperinceList lang={lang} />
+		</SectionContainer>
+		<SectionContainer id="education">
+			<h2 class="text-3xl font-bold mb-8">{indexEn.sections.education}</h2>
+			<Formation lang={lang} />
+		</SectionContainer>
+
+		<SectionContainer id="about-me">
+			<h2 class="text-3xl font-bold mb-8">{indexEn.sections.aboutMe}</h2>
+			<AboutMe lang={lang} />
+		</SectionContainer>
+	</main>
+</Layout>
+

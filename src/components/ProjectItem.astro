@@ -12,8 +12,10 @@ interface Props {
     progress: number;
     image: string;
     techs: any[];
+    codeLabel?: string;
+    previewLabel?: string;
 }
-const { id, title, description, link, github, progress, image, techs } =
+const { id, title, description, link, github, progress, image, techs, codeLabel = "Code", previewLabel = "Preview" } =
     Astro.props;
 ---
 
@@ -62,7 +64,7 @@ const { id, title, description, link, github, progress, image, techs } =
                     github && (
                         <LinkButton href={github}>
                             <GitHub class="size-6" />
-                            Code
+                            {codeLabel}
                         </LinkButton>
                     )
                 }
@@ -70,7 +72,7 @@ const { id, title, description, link, github, progress, image, techs } =
                     link && (
                         <LinkButton href={link}>
                             <Link class="size-4" />
-                            Preview
+                            {previewLabel}
                         </LinkButton>
                     )
                 }

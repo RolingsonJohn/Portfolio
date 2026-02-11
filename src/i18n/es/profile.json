@@ -1,0 +1,17 @@
+{
+  "name": "John Rolingson",
+  "badge": "Disponible para trabajar",
+  "description": {
+    "role": "Ingeniero Informático",
+    "intro": "con especial interés en el desarrollo",
+    "focus": "Backend, la optimización/automatización y la ciberseguridad",
+    "suffix": ", siempre desde una base sólida de conocimiento."
+  },
+  "aria": {
+    "profilePhoto": "Foto de perfil"
+  },
+  "social": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  }
+}

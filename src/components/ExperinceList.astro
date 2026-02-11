@@ -1,15 +1,17 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
+import experienceEs from "../i18n/es/experience.json";
+import experienceEn from "../i18n/en/experience.json";
 const base = import.meta.env.BASE_URL;
-const EXPERIENCES = [
-    {
-        date: "Septiembre 2024 - Marzo 2025",
-        title: "Ingeniero en prácticas - Natureh",
-        image: `${base}/institutions/natureh-logo.webp`,
-        description:
-            "Soporte y resolución de incidencias en entornos productivos, desarrollo y mantenimiento de soluciones ERP personalizadas (Visual Basic y SQL), automatización de procesos mediante EDIFACT e integración de servicios web SOAP con operadores logísticos (GLS).",
-    },
-];
+
+type Lang = "es" | "en";
+const { lang = "es" } = Astro.props as { lang?: Lang };
+const experienceData = lang === "en" ? experienceEn : experienceEs;
+
+const EXPERIENCES = experienceData.items.map((item) => ({
+    ...item,
+    image: item.id === "natureh" ? `${base}/institutions/natureh-logo.webp` : "",
+}));
 ---
 
 <ol class="relative border-s border-default mb-10">

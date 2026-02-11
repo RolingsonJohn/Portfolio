@@ -1,33 +1,28 @@
 ---
-const base = import.meta.env.BASE_URL;
+import navEs from "../i18n/es/nav.json";
+import navEn from "../i18n/en/nav.json";
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+
+type Lang = "es" | "en";
+const { lang = "es" } = Astro.props as { lang?: Lang };
+
+const nav = lang === "en" ? navEn : navEs;
 
 const navItems = [
+    { title: nav.projects, label: "projects", url: `${base}#projects` },
+    { title: nav.experience, label: "experience", url: `${base}#experience` },
+    { title: nav.formation, label: "education", url: `${base}#education` },
+    { title: nav.aboutMe, label: "about-me", url: `${base}#about-me` },
     {
-        title: "Proyectos",
-        label: "proyectos",
-        url: `${base}#projects`,
-    },
-    {
-        title: "Experiencia",
-        label: "experiencia",
-        url: `${base}#experience`,
-    },
-    {
-        title: "Formación",
-        label: "formacion",
-        url: `${base}#education`,
-    },
-    {
-        title: "Sobre mí",
-        label: "sobre-mi",
-        url: `${base}#about-me`,
-    },
-    {
-        title: "Contacto",
-        label: "contacto",
-        url: "mailto:rolingson.john@gmail.com", // mailto no necesita base
+        title: nav.contact,
+        label: "contact",
+        url: "mailto:rolingson.john@gmail.com",
     },
 ];
+
+const esUrl = base;
+const enUrl = `${base}en/`;
 ---
 
 <header
@@ -47,6 +42,34 @@ const navItems = [
                 </a>
             ))
         }
+
+        <details class="relative ml-4">
+            <summary
+                class="flex items-center gap-1 cursor-pointer select-none px-2 py-1 rounded-full bg-white/70 dark:bg-black/40 shadow-sm"
+            >
+                <span class="text-xs uppercase tracking-wide">
+                    {lang === "en" ? "EN" : "ES"}
+                </span>
+            </summary>
+            <div
+                class="absolute right-0 mt-2 w-28 rounded-md bg-white dark:bg-zinc-900 shadow-lg ring-1 ring-black/5 py-1 text-sm z-20"
+            >
+                <a
+                    href={esUrl}
+                    class="flex items-center gap-2 px-3 py-1 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                >
+                    <span aria-hidden="true">🇪🇸</span>
+                    <span>Español</span>
+                </a>
+                <a
+                    href={enUrl}
+                    class="flex items-center gap-2 px-3 py-1 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                >
+                    <span aria-hidden="true">🇬🇧</span>
+                    <span>English</span>
+                </a>
+            </div>
+        </details>
     </nav>
 </header>
 

@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "title": "John Rolingson",
+    "description": "Portfolio of John Rolingson"
+  },
+  "sections": {
+    "projects": "Projects",
+    "experience": "Experience",
+    "education": "Education",
+    "aboutMe": "About me"
+  }
+}

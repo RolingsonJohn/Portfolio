@@ -1,18 +1,17 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
+import formationEs from "../i18n/es/formation.json";
+import formationEn from "../i18n/en/formation.json";
 const base = import.meta.env.BASE_URL;
 
-const FORMATION = [
-    {
-        date: "Septiembre 2021 - Julio 2025",
-        title: "Grado en Ingeniería Informática - Universidad Autónoma de Madrid",
-        image: `${base}/institutions/uam-logo.webp`,
-        description: `Nota media: 7,72 / 10
-Asignaturas relevantes: Ciberseguridad (9,2), Fundamentos de Criptografía y Seguridad Informática (8,0),
-Inteligencia Artificial (8.7), Computación de altas prestaciones (8.7), Algoritmia y Estructura de datos (8.2),
-Ingeniería del Software (8.2).`,
-    },
-];
+type Lang = "es" | "en";
+const { lang = "es" } = Astro.props as { lang?: Lang };
+const formationData = lang === "en" ? formationEn : formationEs;
+
+const FORMATION = formationData.items.map((item) => ({
+    ...item,
+    image: item.id === "uam" ? `${base}/institutions/uam-logo.webp` : "",
+}));
 ---
 
 <ol class="relative border-s border-default mb-10">
